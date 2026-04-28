@@ -12,11 +12,14 @@
 
 #include "push_swap.h"
 
-int	ft_isdigit(int c)
+
+int	valid_arguments(int	*argv)
 {
-	return (c >= '0' && c <= '9');
-}
-int	valid_arguments(int arg)
-{
-	if(ft_isdigit(arg) == 0 || )
+	int	i;
+
+	i = 0;
+	while(argv[i])
+	{
+		
+	}
 }

@@ -1,28 +1,29 @@
-NAME := push_swap
+NAME    := push_swap
+LIBFT   := libft/libft.a
 
-SRCS := main.c \
-		parser.c \
-		stack.c \
-		operations.c \
+SRCS    := main.c \ parser.c \ stack.c \ operations.c
+OBJ     := $(SRCS:.c=.o)
 
-
-OBJ  := $(SRCS:.c=.o)
-
-CFLAGS := -Wall -Wextra -Werror
-
+CFLAGS  := -Wall -Wextra -Werror
+INCLUDES := -I. -Ilibft
 all: $(NAME)
 
-$(OBJ): %.o: %.c
-	gcc $(CFLAGS) -c $< -o $@
+$(LIBFT):
+    make -C libft
 
-$(NAME): $(OBJ)
-	gcc $(CFLAGS) $^ -o $@
+$(OBJ): %.o: %.c
+    gcc $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(NAME): $(LIBFT) $(OBJ)
+    gcc $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 clean:
-	rm -f $(OBJ)
+    rm -f $(OBJ)
+    make -C libft clean
 
 fclean:
-	rm -f $(OBJ) $(NAME)
+    rm -f $(OBJ) $(NAME)
+    make -C libft fclean
 
 re: fclean all
 
