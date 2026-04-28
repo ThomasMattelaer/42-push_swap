@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmattela <tmattela@student.42belgium.be>   #+#  +:+       +#+        */
+/*   By: tmattela <tmattela@student.42belgium.com>  #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-04-28 09:23:21 by tmattela          #+#    #+#             */
-/*   Updated: 2026-04-28 09:23:21 by tmattela         ###   ########.fr       */
+/*   Created: 2026-04-07 09:07:52 by tmattela          #+#    #+#             */
+/*   Updated: 2026-04-07 09:07:52 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap_th.h"
 
-int main(int argc, char *argv)
+int	ft_isascii(int c)
 {
-	if(argc == 1)
-		return (0); // a peaufiner pour renvoyer vers la fonction d'erreur;
-
+	return (c >= 0 && c <= 127);
 }

@@ -10,16 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_th.h"
 
 
-int	valid_arguments(int	*argv)
+int	valid_arguments(t_stack a, int *argv)
 {
 	int	i;
 
 	i = 0;
-	while(argv[i])
+	while (argv[i])
 	{
-		
+		if (ft_isascii(argv[i]) == 0 || argv[i] >= -2147483648 && argv[i] <= 2147483647)
+			return ; // return error here;
+		// add to stack;
+		i++;
 	}
+}
+
+int check_duplicates(t_stack *a, int nb)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (a != NULL)
+	{
+		if ()
+	}
+
 }

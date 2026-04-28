@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_TH_H
+# define PUSH_SWAP_TH_H
 
 # include <unistd.h>
-# include "libft/libft.h"
 
 typedef struct s_stack
 {
@@ -22,5 +21,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 } t_stack;
 
+int	ft_isascii(int c);
 
 #endif
