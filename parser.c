@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-static int	parsing_data (char *argv)
+static int	parsing_data(char *argv)
 {
 	int	i;
-	int res;
+	int	res;
 
 	i = 0;
 	while (argv[i])
@@ -28,7 +28,7 @@ static int	parsing_data (char *argv)
 	return (res);
 }
 
-static int check_duplicates(t_stack *stack_a, int nb)
+static int	check_duplicates(t_stack *stack_a, int nb)
 {
 	t_stack	*current;
 
@@ -53,8 +53,8 @@ int	valid_arguments(t_stack **stack_a, char **argv)
 	{
 		res = parsing_data(argv[i]);
 		if (check_duplicates(*stack_a, res) == 0)
-						// Free le node;
-			return (0); 	// return error here;
+			// Free le node;
+			return (0);// return error here;
 		ft_lstadd_back(stack_a, ft_lstnew(res)); // add to stack;
 		i++;
 	}

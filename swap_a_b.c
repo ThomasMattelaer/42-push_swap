@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap_a_b.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: josamba- <josamba-@student.42belgium.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/29 17:42:06 by josamba-          #+#    #+#             */
+/*   Updated: 2026/04/29 17:42:09 by josamba-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void swap_a_b(t_stack  *stack_a, t_stack  *stack_b)
+void	swap_a_b(t_stack *stack_a, t_stack *stack_b)
 {
-    swap(stack_a);
-    swap(stack_b);
+	swap(stack_a);
+	swap(stack_b);
 }
 // t_stack *new_node(int value)
 // {

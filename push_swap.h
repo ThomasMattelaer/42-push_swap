@@ -22,7 +22,7 @@ typedef struct s_stack
 {
 	int				value;
 	struct s_stack	*next;
-} t_stack;
+}	t_stack;
 
 int		ft_isdigit(int c);
 int		valid_arguments(t_stack **stack_a, char **argv);
@@ -37,8 +37,8 @@ void	reverse_rotate(t_stack **stack);
 void	reverse_rotate_a_b(t_stack **stack_a, t_stack **stack_b);
 void	rotate(t_stack **stack);
 void	rotate_a_b(t_stack **stack_a, t_stack **stack_b);
-void	push(t_stack  **stack_a, t_stack  **stack_b);
-void	swap(t_stack  *stack);
-void	swap_a_b(t_stack  *stack_a, t_stack  *stack_b);
+void	push(t_stack **stack_a, t_stack **stack_b);
+void	swap(t_stack *stack);
+void	swap_a_b(t_stack *stack_a, t_stack *stack_b);
 
 #endif

@@ -14,8 +14,8 @@
 
 static int	*stack_to_array(t_stack *stack_a, int size)
 {
-	int 	*arr;
-	int 	i;
+	int		*arr;
+	int		i;
 	t_stack	*current;
 
 	i = 0;
@@ -23,7 +23,7 @@ static int	*stack_to_array(t_stack *stack_a, int size)
 	arr = malloc(sizeof(int) * (size));
 	if (!arr)
 		return (NULL);
-	while(current != NULL)
+	while (current != NULL)
 	{
 		arr[i] = current->value;
 		current = current->next;
@@ -34,29 +34,29 @@ static int	*stack_to_array(t_stack *stack_a, int size)
 
 float	compute_disorder(t_stack *stack_a)
 {
-    int mistakes;
-    int total_pairs;
-    int i;
-	int j;
+	int	mistakes;
+	int	total_pairs;
+	int	i;
+	int	j;
 	int	*arr;
 
-    mistakes = 0;
+	mistakes = 0;
 	total_pairs = 0;
 	i = 0;
 	arr = stack_to_array(stack_a, ft_lstsize(stack_a));
 	if (!arr)
 		return (0.0);
-    while (i < ft_lstsize(stack_a))
-    {
-        j = i+1;
-        while (j < ft_lstsize(stack_a))
-        {
-            total_pairs += 1;
-            if (arr[i] > arr[j])
-                mistakes += 1;
-            j++;
-        }
-        i++;
-    }
-    return ((float)mistakes / total_pairs);
+	while (i < ft_lstsize(stack_a))
+	{
+		j = i + 1;
+		while (j < ft_lstsize(stack_a))
+		{
+			total_pairs += 1;
+			if (arr[i] > arr[j])
+				mistakes += 1;
+			j++;
+		}
+		i++;
+	}
+	return ((float)mistakes / total_pairs);
 }

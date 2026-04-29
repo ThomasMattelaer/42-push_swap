@@ -1,23 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: josamba- <josamba-@student.42belgium.be    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/29 17:42:41 by josamba-          #+#    #+#             */
+/*   Updated: 2026/04/29 17:42:43 by josamba-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	reverse_rotate(t_stack **stack)
 {
-	t_stack *top;
-	t_stack *before_bottom;
-	t_stack *bottom;
-	t_stack *current;
+	t_stack	*top;
+	t_stack	*before_bottom;
+	t_stack	*bottom;
+	t_stack	*current;
 
-    if (*stack == NULL || (*stack)->next == NULL)
-        return ;
-    top = *stack;
-    current = *stack;
-    while (current->next->next != NULL)
-        current = current->next;
-    before_bottom = current;
-    bottom = current->next;
-    *stack = bottom;
-    bottom->next = top;
-    before_bottom->next = NULL;
+	if (*stack == NULL || (*stack)->next == NULL)
+		return ;
+	top = *stack;
+	current = *stack;
+	while (current->next->next != NULL)
+		current = current->next;
+	before_bottom = current;
+	bottom = current->next;
+	*stack = bottom;
+	bottom->next = top;
+	before_bottom->next = NULL;
 }
 
 // t_stack *new_node(int value)

@@ -1,16 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: josamba- <josamba-@student.42belgium.be    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/29 17:46:50 by josamba-          #+#    #+#             */
+/*   Updated: 2026/04/29 17:46:58 by josamba-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	rotate(t_stack **stack)
 {
-	int temp_content;
-	t_stack *current;
+	int		temp_content;
+	t_stack	*current;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
 	current = *stack;
 	temp_content = (*stack)->value;
-	while(current->next != NULL)
+	while (current->next != NULL)
 	{
 		current->value = current->next->value;
 		current = current->next;

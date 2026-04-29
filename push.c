@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	push(t_stack  **stack_a, t_stack  **stack_b)
+void	push(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*save_a;
 	t_stack	*save_b_next;

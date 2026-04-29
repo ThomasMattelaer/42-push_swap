@@ -1,16 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: josamba- <josamba-@student.42belgium.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/29 17:45:26 by josamba-          #+#    #+#             */
+/*   Updated: 2026/04/29 17:45:31 by josamba-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap(t_stack  *stack)
+void	swap(t_stack *stack)
 {
-    int temp_content;
+	int	temp_content;
 
-    if (stack == NULL || stack->next == NULL)
-        return ;
-    temp_content = stack->value;
-    stack->value = stack->next->value;
-    stack->next->value = temp_content;
-    return ;
+	if (stack == NULL || stack->next == NULL)
+		return ;
+	temp_content = stack->value;
+	stack->value = stack->next->value;
+	stack->next->value = temp_content;
+	return ;
 }
 
 // t_stack *new_node(int value)
