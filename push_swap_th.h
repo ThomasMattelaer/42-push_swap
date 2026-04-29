@@ -25,9 +25,11 @@ typedef struct s_stack
 int		ft_isdigit(int c);
 int		valid_arguments(t_stack **stack_a, char **argv);
 int		ft_atoi(const char *nptr);
+int		ft_lstsize(t_stack *stack);
 char	**ft_split(char const *s, char c);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_lstnew(int value);
 t_stack	*ft_lstlast(t_stack *lst);
+float	compute_disorder(t_stack *stack_a);
 
 #endif

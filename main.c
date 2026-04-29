@@ -42,11 +42,28 @@ int	main(int argc, char **argv)
 	char	**tab;
 	int		i;
 
-	i = 1;
 	stack_a = NULL;
 	stack_b = NULL;
+	i = 1;
 	if (argc == 1)
 		return (0);
+	// if (argv[1][0] == '-' && argv[1][1] == '-')
+	// {
+	// 	if (argv[1] == "--simple")
+	// 		//launch simple algortihm
+	// 	else if (argv[1] == "--medium")
+	// 		// launch medium algorith
+	// 	else if (argv[1] == "--complex")
+	// 		// launch complex algorithm
+	// 	else if (argv[1] == "--adaptative")
+	// 		// launch regarding disorder
+	// 	i = 2;
+	// }
+	// else
+	// {
+	// 	//launch adaptative regarding disorder
+	// 	i = 1;
+	// }
 	while (argv[i])
 	{
 		tab = ft_split(argv[i], ' ');
@@ -56,4 +73,5 @@ int	main(int argc, char **argv)
 	}
 	print_stack(stack_a, "A");
 	print_stack(stack_b, "B");
+	printf("Disorder : %.2f\n", compute_disorder(stack_a));
 }
