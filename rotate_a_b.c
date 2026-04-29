@@ -3,30 +3,31 @@
 #include "push_swap_th.h"
 void	rotate(t_stack **stack_a, t_stack **stack_b)
 {
-	int		temp_content;
+	int		temp_content_a;
+	int		temp_content_b;
 	t_stack	*current_a;
 	t_stack	*current_b;
-
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
 	current_a = *stack_a;
-	temp_content = (*stack_a)->value;
+	temp_content_a = (*stack_a)->value;
 	while(current_a->next != NULL)
 	{
 		current_a->value = current_a->next->value;
 		current_a = current_a->next;
 	}
-	current_b->value = temp_content;
+	current_a->value = temp_content_a;
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;
+	temp_content_b = (*stack_b)->value;
 	current_b = *stack_b;
-	temp_content = (*stack_b)->value;
+	temp_content_b = (*stack_b)->value;
 	while(current_b->next != NULL)
 	{
 		current_b->value = current_b->next->value;
 		current_b = current_b->next;
 	}
-	current_b->value = temp_content;
+	current_b->value = temp_content_b;
 }
 
 t_stack *new_node(int value)
