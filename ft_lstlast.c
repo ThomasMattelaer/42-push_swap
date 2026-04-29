@@ -1,16 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmattela <tmattela@student.42belgium.com>  #+#  +:+       +#+        */
+/*   By: tmattela <tmattela@student.42belgium.be>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-04-07 09:07:52 by tmattela          #+#    #+#             */
-/*   Updated: 2026-04-07 09:07:52 by tmattela         ###   ########.fr       */
+/*   Created: 2026-04-29 09:27:54 by tmattela          #+#    #+#             */
+/*   Updated: 2026-04-29 09:27:54 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "push_swap_th.h"
+
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	return (c >= 0 && c <= 127);
+	t_stack	*current;
+
+	if (!lst)
+		return (NULL);
+	current = lst;
+	while (current->next != NULL)
+		current = current->next;
+	return (current);
 }

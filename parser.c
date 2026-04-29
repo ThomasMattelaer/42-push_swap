@@ -12,31 +12,51 @@
 
 #include "push_swap_th.h"
 
-
-int	valid_arguments(t_stack a, int *argv)
+static int	parsing_data (char *argv)
 {
 	int	i;
+	int res;
 
 	i = 0;
 	while (argv[i])
 	{
-		if (ft_isascii(argv[i]) == 0 || argv[i] >= -2147483648 && argv[i] <= 2147483647)
-			return ; // return error here;
-		// add to stack;
+		if (ft_isdigit(argv[i]) == 0)
+			return (-1);
 		i++;
 	}
+	res = ft_atoi(argv);
+	return (res);
 }
 
-int check_duplicates(t_stack *a, int nb)
+static int check_duplicates(t_stack *stack_a, int nb)
 {
-	int i;
-	int j;
+	t_stack	*current;
+
+	current = stack_a;
+	while (current != NULL)
+	{
+		if (nb == current->value)
+			return (0);
+		current = current->next;
+	}
+	return (1);
+}
+
+int	valid_arguments(t_stack **stack_a, char **argv)
+{
+	t_stack	*new_node;
+	int		i;
+	int		res;
 
 	i = 0;
-	j = 0;
-	while (a != NULL)
+	while (argv[i])
 	{
-		if ()
+		res = parsing_data(argv[i]);
+		if (check_duplicates(*stack_a, res) == 0)
+						// Free le node;
+			return (0); 	// return error here;
+		ft_lstadd_back(stack_a, ft_lstnew(res)); // add to stack;
+		i++;
 	}
-
+	return (1);
 }

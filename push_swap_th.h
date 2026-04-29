@@ -14,6 +14,7 @@
 # define PUSH_SWAP_TH_H
 
 # include <unistd.h>
+# include <stdlib.h>
 
 typedef struct s_stack
 {
@@ -21,6 +22,12 @@ typedef struct s_stack
 	struct s_stack	*next;
 } t_stack;
 
-int	ft_isascii(int c);
+int		ft_isdigit(int c);
+int		valid_arguments(t_stack **stack_a, char **argv);
+int		ft_atoi(const char *nptr);
+char	**ft_split(char const *s, char c);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
+t_stack	*ft_lstnew(int value);
+t_stack	*ft_lstlast(t_stack *lst);
 
 #endif
