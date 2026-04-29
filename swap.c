@@ -1,4 +1,4 @@
-void swap_a(t_stack  *stack)
+void swap(t_stack  *stack)
 {
     int temp_content;
 
