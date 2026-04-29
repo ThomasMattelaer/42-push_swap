@@ -9,7 +9,8 @@
 /*   Updated: 2026-04-29 09:06:56 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap_th.h"
+
+#include "push_swap.h"
 
 int	count_words(char *str, char c)
 {

@@ -9,7 +9,8 @@
 /*   Updated: 2026-04-29 08:16:54 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap_th.h"
+
+#include "push_swap.h"
 
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {

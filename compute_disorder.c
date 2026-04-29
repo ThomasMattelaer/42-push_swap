@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_th.h"
+#include "push_swap.h"
 
 static int	*stack_to_array(t_stack *stack_a, int size)
 {

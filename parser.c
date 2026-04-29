@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_th.h"
+#include "push_swap.h"
 
 static int	parsing_data (char *argv)
 {

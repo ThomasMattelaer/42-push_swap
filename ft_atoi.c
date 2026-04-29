@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include "push_swap_th.h"
+#include "push_swap.h"
 
 int	ft_atoi(const char *nptr)
 {

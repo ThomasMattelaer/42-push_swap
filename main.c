@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap_th.h"
-#include <stdio.h>
 
 static void	print_stack(t_stack *stack, char *name)
 {
