@@ -64,9 +64,7 @@ void	reverse_rotate(t_stack **stack)
 //     b->next->next->next = new_node(8);
 
 //     print_stack(a, "A avant");
-//     print_stack(b, "B avant");
-//     reverse_rotate_a_b(&a, &b);
+//     reverse_rotate(&a);
 //     print_stack(a, "A après");
-//     print_stack(b, "B après");
 //     return 0;
 // }

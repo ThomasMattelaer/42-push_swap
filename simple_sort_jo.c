@@ -1,51 +1,99 @@
-#include <limits.h>
+
+# include "push_swap.h"
+
 int	min(t_stack *stack)
 {
-	int	temp_min;
+	int	index_min;
+	int temp_min;
+	int index;
 	t_stack	*current;
 
-	temp_min = current->value;
 	current = stack;
-	while (current->next)
+	temp_min = current->value;
+	index_min = 0;
+	index = 0;
+	while (current)
 	{
-		if (temp_min > current->next->value)
+		if (temp_min >= current->value)
 		{
-			temp_min = current->next->value;
-			current = current->next;
+			temp_min = current->value;
+			index_min = index;
 		}
+		index++;
+		current = current->next;
 	}
-	return (temp_min);
+	return (index_min);
 }
 
-void	top(t_stack *stack, int min)
+void	top(t_stack **stack)
 {
 	t_stack	*current;
-	int		index;
+	int		index_min;
 	int		size;
 
-	current = stack;
-	index = 0;
-	size = stack_size(stack);
-	while (current->value != min)
+	current = *stack;
+	index_min = min(*stack);
+	size = stack_size(*stack);
+	if ((size / 2) >= index_min)
 	{
-		current = current->next;
-		index++;
-	}
-	if (size / 2 > index)
-		while(index + size != size)
+		while(index_min != 0)
 		{
-			rotate(current);
-			index--;
+			rotate(stack);
+			index_min--;
 		}
+	}
 	else
-		while(index != size)
+		while((size - index_min) > 0)
 		{
-			reverse_rotate(current);
-			index++;
+			reverse_rotate(stack);
+			index_min++;
 		}
 }
 
-sort(t_stack *stack)
+void	sort(t_stack **stack_a, t_stack **stack_b)
 {
-	while ()
+	t_stack *current;
+
+	current = *stack_a;
+	while (current->next)
+		top(stack_a);
+	while ((*stack_a)->next)
+		push(stack_b, stack_a);
+	while ((*stack_b)->next)
+		push(stack_a, stack_b);
+}
+
+t_stack *new_node(int value)
+{
+    t_stack *node = malloc(sizeof(t_stack));
+    node->value = value;
+    node->next = NULL;
+    return node;
+}
+
+void print_stack(t_stack *stack, char *name)
+{
+    printf("%s: ", name);
+    while (stack)
+    {
+        printf("%d ", stack->value);
+        stack = stack->next;
+    }
+    printf("\n");
+}
+
+int main()
+{
+    t_stack *b = new_node(5);
+    t_stack *a = new_node(5);
+    a->next = new_node(4);
+    a->next->next = new_node(3);
+    a->next->next->next = new_node(2);
+    a->next->next->next->next = new_node(1);
+    a->next->next->next->next->next = new_node(6);
+
+    print_stack(a, "avant");
+    sort(&a,&b);
+    print_stack(a, "après");
+    return 0;
 }
