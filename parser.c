@@ -12,6 +12,21 @@
 
 #include "push_swap.h"
 
+void	free_stack(t_stack **stack)
+{
+	t_stack	*current;
+	t_stack	*next;
+
+	current = *stack;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*stack = NULL;
+}
+
 static int	parsing_data(char *argv)
 {
 	int	i;
@@ -53,9 +68,12 @@ int	valid_arguments(t_stack **stack_a, char **argv)
 	{
 		res = parsing_data(argv[i]);
 		if (check_duplicates(*stack_a, res) == 0)
-			// Free le node;
-			return (0);// return error here;
-		ft_lstadd_back(stack_a, ft_lstnew(res)); // add to stack;
+		{
+			free_stack(stack_a);
+			ft_putstr("Error\n", 1);
+			return (0);
+		}
+		ft_lstadd_back(stack_a, ft_lstnew(res));
 		i++;
 	}
 	return (1);

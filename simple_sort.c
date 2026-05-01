@@ -41,7 +41,7 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 	int pos;
 
 	size = stack_size(*stack_a);
-	while(size-- > 0)
+	while((size--) > 0)
 	{
 		pos = find_min_pos(*stack_a);
 		if(pos > size/2)
@@ -58,8 +58,8 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 		print_stack(*stack_b, "B");
 	}
 	size = stack_size(*stack_b);
-	while (size-- > 0)
-	push(stack_b, stack_a, 'b');
+	while ((size--) > 0)
+		push(stack_b, stack_a, 'b');
 }
 #include <stdio.h>
 void    print_stack(t_stack *stack, char *name)

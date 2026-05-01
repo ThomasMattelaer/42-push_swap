@@ -13,7 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
@@ -42,6 +41,5 @@ void	push(t_stack **stack_a, t_stack **stack_b, char c);
 void	swap(t_stack *stack, char c);
 void	swap_a_b(t_stack *stack_a, t_stack *stack_b);
 void	ft_putstr(char *s, int fd);
-
 
 #endif

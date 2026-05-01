@@ -56,6 +56,8 @@ int	main(int argc, char **argv)
 	// 		// launch complex algorithm
 	// 	else if (argv[1] == "--adaptative")
 	// 		// launch regarding disorder
+	// 	else if (argv[1] == "--bench")
+	// 		// recheck
 	// 	i = 2;
 	// }
 	// else
