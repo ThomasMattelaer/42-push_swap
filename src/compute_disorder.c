@@ -43,13 +43,13 @@ float	compute_disorder(t_stack *stack_a)
 	mistakes = 0;
 	total_pairs = 0;
 	i = 0;
-	arr = stack_to_array(stack_a, ft_lstsize(stack_a));
+	arr = stack_to_array(stack_a, stack_size(stack_a));
 	if (!arr)
 		return (0.0);
-	while (i < ft_lstsize(stack_a))
+	while (i < stack_size(stack_a))
 	{
 		j = i + 1;
-		while (j < ft_lstsize(stack_a))
+		while (j < stack_size(stack_a))
 		{
 			total_pairs += 1;
 			if (arr[i] > arr[j])

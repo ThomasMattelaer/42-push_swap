@@ -59,7 +59,6 @@ static int	check_duplicates(t_stack *stack_a, int nb)
 
 int	valid_arguments(t_stack **stack_a, char **argv)
 {
-	t_stack	*new_node;
 	int		i;
 	int		res;
 
