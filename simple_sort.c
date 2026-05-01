@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
+
+
 void    print_stack(t_stack *stack, char *name);
 static int find_min_pos(t_stack *stack_a)
 {
@@ -41,20 +44,21 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 	int pos;
 
 	size = stack_size(*stack_a);
-	while((size--) > 0)
+	while((size--) > 1)
 	{
 		pos = find_min_pos(*stack_a);
-		if(pos > size/2)
+		if (pos > (size + 1)/2)
 		{
-			while((size - pos++) >= 0)
+			while((size - pos++) >= 1)
 				reverse_rotate(stack_a, 'a');
-			}
-			else
-			{
+		}
+		else
+		{
 			while((pos-- > 0))
-			rotate(stack_a, 'a');
+				rotate(stack_a, 'a');
 		}
 		push(stack_a, stack_b, 'a');
+		print_stack(*stack_a, "B");
 		print_stack(*stack_b, "B");
 	}
 	size = stack_size(*stack_b);
