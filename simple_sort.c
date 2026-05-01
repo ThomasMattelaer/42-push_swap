@@ -1,29 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   simple_sort.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmattela <tmattela@student.42belgium.be>   #+#  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026-05-01 12:19:00 by tmattela          #+#    #+#             */
+/*   Updated: 2026-05-01 12:19:00 by tmattela         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-#include <stdio.h>
-void    print_stack(t_stack *stack, char *name)
-{
-    t_stack *current;
-
-    printf("Stack %s (top→bot): ", name);
-    current = stack;
-    while (current)
-    {
-        printf("[%d] ", current->value);
-        current = current->next;
-    }
-    printf("\n");
-}
-t_stack *new_node(int value)
-{
-    t_stack *node;
-
-    node = malloc(sizeof(t_stack));
-    node->value = value;
-    node->next = NULL;
-    return (node);
-}
-
-
+void    print_stack(t_stack *stack, char *name);
 static int find_min_pos(t_stack *stack_a)
 {
 	int		min;
@@ -47,69 +35,77 @@ static int find_min_pos(t_stack *stack_a)
 	}
 	return (pos);
 }
-static int	ft_min(int a, int b)
-{
-    if (a < b)
-        return (a);
-    return (b);
-}
-
 void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 	int pos;
-	int min;
 
 	size = stack_size(*stack_a);
-	printf("Size of the stack [%d]\n", size);
-	while(size > 0)
+	while(size-- > 0)
 	{
 		pos = find_min_pos(*stack_a);
 		if(pos > size/2)
 		{
-			while((size - pos) >= 0)
-			{
-				reverse_rotate(stack_a);
-				pos++;
+			while((size - pos++) >= 0)
+				reverse_rotate(stack_a, 'a');
 			}
-		}
-		else
-		{
-			while((pos > 0))
+			else
 			{
-				rotate(stack_a);
-				pos--;
-			}
+			while((pos-- > 0))
+			rotate(stack_a, 'a');
 		}
-		push(stack_a, stack_b);
+		push(stack_a, stack_b, 'a');
 		print_stack(*stack_b, "B");
-		size--;
 	}
 	size = stack_size(*stack_b);
-	push(stack_b, stack_a);
+	while (size-- > 0)
+	push(stack_b, stack_a, 'b');
 }
-// int main(void)
-// {
-//     t_stack *stack_a;
-//     t_stack *stack_b;
+#include <stdio.h>
+void    print_stack(t_stack *stack, char *name)
+{
+    t_stack *current;
 
-//     // Stack hardcodée : 3 → 5 → 1 → 4 → 2  (top → bot)
-//     stack_a = new_node(3);
-//     stack_a->next = new_node(5);
-//     stack_a->next->next = new_node(1);
-//     stack_a->next->next->next = new_node(4);
-//     stack_a->next->next->next->next = new_node(2);
-//     stack_b = NULL;
+    printf("Stack %s (top→bot): ", name);
+    current = stack;
+    while (current)
+    {
+        printf("[%d] ", current->value);
+        current = current->next;
+    }
+    printf("\n");
+}
+t_stack *new_node(int value)
+{
+    t_stack *node;
 
-//     printf("=== État initial ===\n");
-//     print_stack(stack_a, "A");
-//     printf("\n=== Début du tri ===\n\n");
+    node = malloc(sizeof(t_stack));
+    node->value = value;
+    node->next = NULL;
+    return (node);
+}
+int main(void)
+{
+	t_stack *stack_a;
+    t_stack *stack_b;
 
-//     simple_sort(&stack_a, &stack_b);
+    // Stack hardcodée : 3 → 5 → 1 → 4 → 2  (top → bot)
+    stack_a = new_node(3);
+    stack_a->next = new_node(5);
+    stack_a->next->next = new_node(1);
+    stack_a->next->next->next = new_node(4);
+    stack_a->next->next->next->next = new_node(2);
+    stack_b = NULL;
 
-//     printf("=== État final ===\n");
-//     print_stack(stack_a, "A");
-//     print_stack(stack_b, "B");
+    printf("=== État initial ===\n");
+    print_stack(stack_a, "A");
+    printf("\n=== Début du tri ===\n\n");
 
-//     return (0);
-// }
+    simple_sort(&stack_a, &stack_b);
+
+    printf("=== État final ===\n");
+    print_stack(stack_a, "A");
+    print_stack(stack_b, "B");
+
+    return (0);
+}

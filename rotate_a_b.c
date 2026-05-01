@@ -14,8 +14,9 @@
 
 void	rotate_a_b(t_stack **stack_a, t_stack **stack_b)
 {
-	rotate(stack_a);
-	rotate(stack_b);
+	rotate(stack_a, ' ');
+	rotate(stack_b, ' ');
+	ft_putstr("rr", 1);
 }
 
 // t_stack *new_node(int value)

@@ -34,12 +34,14 @@ t_stack	*ft_lstnew(int value);
 t_stack	*ft_lstlast(t_stack *lst);
 float	compute_disorder(t_stack *stack_a);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
-void	reverse_rotate(t_stack **stack);
+void	reverse_rotate(t_stack **stack, char c);
 void	reverse_rotate_a_b(t_stack **stack_a, t_stack **stack_b);
-void	rotate(t_stack **stack);
+void	rotate(t_stack **stack, char c);
 void	rotate_a_b(t_stack **stack_a, t_stack **stack_b);
-void	push(t_stack **stack_a, t_stack **stack_b);
-void	swap(t_stack *stack);
+void	push(t_stack **stack_a, t_stack **stack_b, char c);
+void	swap(t_stack *stack, char c);
 void	swap_a_b(t_stack *stack_a, t_stack *stack_b);
+void	ft_putstr(char *s, int fd);
+
 
 #endif

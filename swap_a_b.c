@@ -14,8 +14,9 @@
 
 void	swap_a_b(t_stack *stack_a, t_stack *stack_b)
 {
-	swap(stack_a);
-	swap(stack_b);
+	swap(stack_a, ' ');
+	swap(stack_b, ' ');
+	ft_putstr("ss", 1);
 }
 // t_stack *new_node(int value)
 // {

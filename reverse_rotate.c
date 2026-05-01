@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	reverse_rotate(t_stack **stack)
+void	reverse_rotate(t_stack **stack, char c)
 {
 	t_stack	*top;
 	t_stack	*before_bottom;
@@ -30,6 +30,10 @@ void	reverse_rotate(t_stack **stack)
 	*stack = bottom;
 	bottom->next = top;
 	before_bottom->next = NULL;
+	if (c == 'a')
+		ft_putstr("rra", 1);
+	else if (c == 'b')
+		ft_putstr("rrb", 1);
 }
 
 // t_stack *new_node(int value)

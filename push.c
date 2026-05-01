@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	push(t_stack **stack_b, t_stack **stack_a)
+void	push(t_stack **stack_b, t_stack **stack_a, char c)
 {
 	t_stack	*save_a;
 	t_stack	*save_b_next;
@@ -24,6 +24,10 @@ void	push(t_stack **stack_b, t_stack **stack_a)
 	*stack_a = *stack_b;
 	(*stack_a)->next = save_a;
 	*stack_b = save_b_next;
+	if (c == 'a')
+		ft_putstr("pa", 1);
+	else if (c == 'b')
+		ft_putstr("pb", 1);
 }
 // t_stack *new_node(int value)
 // {

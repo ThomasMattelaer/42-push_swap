@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate_a_b.c                               :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josamba- <josamba-@student.42belgium.      +#+  +:+       +#+        */
+/*   By: tmattela <tmattela@student.42belgium.be>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 17:47:42 by josamba-          #+#    #+#             */
-/*   Updated: 2026/04/29 17:47:46 by josamba-         ###   ########.fr       */
+/*   Created: 2026-05-01 12:29:21 by tmattela          #+#    #+#             */
+/*   Updated: 2026-05-01 12:29:21 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
-void	reverse_rotate_a_b(t_stack **stack_a, t_stack **stack_b)
+void	ft_putstr(char *s, int fd)
 {
-	reverse_rotate(stack_a, ' ');
-	reverse_rotate(stack_b, ' ');
-	ft_putstr("rrr", 1);
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd, "\n", 1);
 }
