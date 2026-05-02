@@ -1,5 +1,8 @@
 NAME		:= push_swap
 
+PRINTF_DIR  := src/utils/printf
+PRINTF_LIB  := $(PRINTF_DIR)/libftprintf.a
+
 SRCS		:=	src/main.c \
 				src/parser.c \
 				src/compute_disorder.c \
@@ -24,19 +27,24 @@ SRCS		:=	src/main.c \
 OBJ			:= $(SRCS:.c=.o)
 CFLAGS		:= -Wall -Wextra -Werror -I include
 
-all: $(NAME)
+all: $(PRINTF_LIB) $(NAME)
+
+$(PRINTF_LIB):
+	make -C $(PRINTF_DIR)
 
 $(OBJ): %.o: %.c
 	gcc $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	gcc $(CFLAGS) $(OBJ) -o $(NAME)
+	gcc $(CFLAGS) $(OBJ) $(PRINTF_LIB) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
+	make -C $(PRINTF_DIR) clean
 
 fclean:
 	rm -f $(OBJ) $(NAME)
+	make -C $(PRINTF_DIR) fclean
 
 re: fclean all
 

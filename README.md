@@ -3,7 +3,7 @@
 TO DO :
 
 - [X] Check if stack is sorted
-- [X] Medium algortihm (chunk)
+- [ ] Medium algortihm (chunk)
 - [ ] Complex algorithm (radix)
 - [ ] flaged to launch the correct algorithm
 - [ ] Benchmark to implement
