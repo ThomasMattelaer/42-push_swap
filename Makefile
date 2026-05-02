@@ -11,6 +11,7 @@ SRCS		:=	src/main.c \
 				src/operations/swap_a_b.c \
 				src/operations/swap.c \
 				src/sorting/simple_sort.c \
+				src/sorting/medium_sort.c \
 				src/utils/ft_atoi.c \
 				src/utils/ft_isdigit.c \
 				src/utils/ft_lstadd_back.c \
@@ -21,14 +22,14 @@ SRCS		:=	src/main.c \
 				src/utils/stack_size.c
 
 OBJ			:= $(SRCS:.c=.o)
-CFLAGS  := -Wall -Wextra -Werror -I include
+CFLAGS		:= -Wall -Wextra -Werror -I include
 
 all: $(NAME)
 
 $(OBJ): %.o: %.c
 	gcc $(CFLAGS) -c $< -o $@
 
-$(NAME): $(LIBFT) $(OBJ)
+$(NAME): $(OBJ)
 	gcc $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:

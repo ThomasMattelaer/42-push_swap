@@ -12,6 +12,26 @@
 
 #include "push_swap.h"
 
+static int	is_sorted(t_stack *stack_a)
+{
+	int		min;
+	t_stack	*current;
+
+	current = stack_a;
+	min = current->value;
+	while (current)
+	{
+		if (current->value < min)
+		{
+			return (0);
+		}
+		min = current->value;
+		current = current->next;
+	}
+	ft_putstr("\n", 1);
+	return (1);
+}
+
 static void	print_stack(t_stack *stack, char *name)
 {
 	t_stack	*current;
@@ -46,32 +66,37 @@ int	main(int argc, char **argv)
 	i = 1;
 	if (argc == 1)
 		return (0);
-	// if (argv[1][0] == '-' && argv[1][1] == '-')
-	// {
-	// 	if (argv[1] == "--simple")
-	// 		//launch simple algortihm
-	// 	else if (argv[1] == "--medium")
-	// 		// launch medium algorith
-	// 	else if (argv[1] == "--complex")
-	// 		// launch complex algorithm
-	// 	else if (argv[1] == "--adaptative")
-	// 		// launch regarding disorder
-	// 	else if (argv[1] == "--bench")
-	// 		// recheck
-	// 	i = 2;
-	// }
-	// else
-	// {
-	// 	//launch adaptative regarding disorder
-	// 	i = 1;
-	// }
+	if (argv[1][0] == '-' && argv[1][1] == '-')
+	{
+		if (argv[1] == "--simple")
+			//launch simple algortihm
+		else if (argv[1] == "--medium")
+			// launch medium algorith
+		else if (argv[1] == "--complex")
+			// launch complex algorithm
+		else if (argv[1] == "--adaptative")
+			// launch regarding disorder
+		else if (argv[1] == "--bench")
+			// recheck
+		i = 2;
+	}
+	else
+	{
+		//launch adaptative regarding disorder
+		i = 1;
+	}
 	while (argv[i])
 	{
 		tab = ft_split(argv[i], ' ');
-		valid_arguments(&stack_a, tab);
-		free(tab);
+		if(valid_arguments(&stack_a, tab) == 0)
+		{
+			free(tab);
+			return (0);
+		}
 		i++;
 	}
+	if (is_sorted(stack_a) == 1)
+		return (0);
 	print_stack(stack_a, "A");
 	print_stack(stack_b, "B");
 	printf("Disorder : %.2f\n", compute_disorder(stack_a));

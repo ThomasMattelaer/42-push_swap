@@ -12,20 +12,7 @@
 
 #include "push_swap.h"
 
-void	free_stack(t_stack **stack)
-{
-	t_stack	*current;
-	t_stack	*next;
 
-	current = *stack;
-	while (current)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	*stack = NULL;
-}
 
 static int	parsing_data(char *argv)
 {
@@ -55,6 +42,20 @@ static int	check_duplicates(t_stack *stack_a, int nb)
 		current = current->next;
 	}
 	return (1);
+}
+void	free_stack(t_stack **stack)
+{
+	t_stack	*current;
+	t_stack	*next;
+
+	current = *stack;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*stack = NULL;
 }
 
 int	valid_arguments(t_stack **stack_a, char **argv)

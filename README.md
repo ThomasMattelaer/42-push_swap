@@ -2,9 +2,10 @@
 
 TO DO :
 
-1. Check if stack is sorted
-2. Medium algortihm (chunk)
-3. Complex algorithm (radix)
-4. flaged to launch the correct algorithm
-5. Benchmark to implement
-5.1 Sum the count of each actions (PA: 2, RA: 4, etc, ...)
+- [X] Check if stack is sorted
+- [X] Medium algortihm (chunk)
+- [ ] Complex algorithm (radix)
+- [ ] flaged to launch the correct algorithm
+- [ ] Benchmark to implement
+- [ ] Sum the count of each actions (PA: 2, RA: 4, etc, ...)
+
