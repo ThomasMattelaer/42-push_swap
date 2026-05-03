@@ -23,7 +23,7 @@ int *extract(t_stack **stack)
 	return (tab);
 }
 
-int *sort_tab(int *tab, int size)
+void	sort_tab(int *tab, int size)
 {
 	int	i;
 	int	j;
@@ -45,7 +45,35 @@ int *sort_tab(int *tab, int size)
 		}
 		i++;
 	}
-	return (tab);
+}
+
+void	index_stack(t_stack **stack)
+{
+	int *tab;
+	int	size;
+	int	i;
+	t_stack	*current;
+
+	i = 0;
+	size = stack_size(*stack);
+	tab = extract(stack);
+	sort_tab(tab, size);
+	current = *stack;
+	while (current)
+	{
+		i = 0;
+		while (i < size)
+		{
+			if (tab[i] == current->value)
+			{
+				current->value = i;
+				break;
+			}
+			i++;
+		}
+		current = current->next;
+	}
+	free(tab);
 }
 
 int	ft_sqrt(int nb)
@@ -81,4 +109,18 @@ static int	find_max_pos_b(t_stack *stack_b)
 		i++;
 	}
 	return (pos);
+}
+
+void	push_b(t_stack **stack_a, t_stack **stack_b)
+{
+	int size;
+	int chunk_size;
+	t_stack *current;
+
+	size = stack_size(*stack_a);
+	chunk_size = ft_sqrt(size);
+	while (current)
+	{
+		
+	}
 }
