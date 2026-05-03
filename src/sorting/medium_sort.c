@@ -121,6 +121,5 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 	chunk_size = ft_sqrt(size);
 	while (current)
 	{
-
 	}
 }
