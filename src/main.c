@@ -76,6 +76,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	**stack_a;
 	t_stack	**stack_b;
+	t_count count; 
 	char	**tab;
 	int		i;
 

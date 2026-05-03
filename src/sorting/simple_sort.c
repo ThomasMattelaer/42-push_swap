@@ -37,7 +37,7 @@ static int	find_min_pos(t_stack *stack_a)
 	return (pos);
 }
 
-void	simple_sort(t_stack **stack_a, t_stack **stack_b)
+void	simple_sort(t_stack **stack_a, t_stack **stack_b, t_count *count)
 {
 	int	size;
 	int	pos;
@@ -49,20 +49,20 @@ void	simple_sort(t_stack **stack_a, t_stack **stack_b)
 		if (pos > (size + 1) / 2)
 		{
 			while ((size - pos++) >= 1)
-				reverse_rotate(stack_a, 'a');
+				reverse_rotate(stack_a, count, 'a');
 		}
 		else
 		{
 			while ((pos-- > 0))
-				rotate(stack_a, 'a');
+				rotate(stack_a, count, 'a');
 		}
-		push(stack_a, stack_b, 'a');
+		push(stack_a, stack_b, count, 'a');
 		// print_stack(*stack_a, "B");
 		// print_stack(*stack_b, "B");
 	}
 	size = stack_size(*stack_b);
 	while ((size--) > 0)
-		push(stack_b, stack_a, 'b');
+		push(stack_b, stack_a, count, 'b');
 }
 // #include <stdio.h>
 // void    print_stack(t_stack *stack, char *name)

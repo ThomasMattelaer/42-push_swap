@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	complex_sort(t_stack **stack_a,t_stack **stack_b)
+void	complex_sort(t_stack **stack_a,t_stack **stack_b, t_count *count)
 {
 
 }
