@@ -16,13 +16,13 @@ static void	write_and_calculate(t_count *count, char c)
 {
 	if (c == 'a')
 	{
-		ft_putstr("pa", 1);
+		ft_printf(1,"pa");
 		count->pa++;
     	count->total++;
 	}
 	else if (c == 'b')
 	{
-		ft_putstr("pb", 1);
+		ft_printf(1, "pb");
 		count->pb++;
     	count->total++;
 	}
