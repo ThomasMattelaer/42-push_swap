@@ -31,24 +31,24 @@ static int	is_sorted(t_stack *stack_a)
 	ft_putstr("\n", 1);
 	return (1);
 }
-// static void	handle_flags(char **argv, t_stack **stack_a, t_stack **stack_b, int i)
-// {
-// 	if (argv[1][0] == '-' && argv[1][1] == '-')
-// 	{
-// 		if (argv[1] == "--simple")
-// 			simple_sort(&stack_a, &stack_b);
-// 		else if (argv[1] == "--medium")
-// 			medium_sort(&stack_a, &stack_b);
-// 		else if (argv[1] == "--complex")
-// 			complex_sort(&stack_a, &stack_b);
-// 		else if (argv[1] == "--adaptative")
-// 		{
-// 			compute_disorder(*stack_a);
-// 		}
-// 		else if (argv[1] == "--bench")
-// 			bench(argv[2]);
-// 	}
-// }
+static void	handle_flags(char **argv, t_stack **stack_a, t_stack **stack_b, t_count *count)
+{
+	if (argv[1][0] == '-' && argv[1][1] == '-')
+	{
+		if (argv[1] == "--simple")
+			simple_sort(&stack_a, &stack_b, count);
+		else if (argv[1] == "--medium")
+			medium_sort(&stack_a, &stack_b, count);
+		else if (argv[1] == "--complex")
+			complex_sort(&stack_a, &stack_b, count);
+		else if (argv[1] == "--adaptative")
+		{
+			compute_disorder(*stack_a);
+		}
+		else if (argv[1] == "--bench")
+			bench(argv[2]);
+	}
+}
 
 static void	print_stack(t_stack *stack, char *name)
 {
@@ -76,7 +76,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	**stack_a;
 	t_stack	**stack_b;
-	t_count count; 
+	t_count count;
 	char	**tab;
 	int		i;
 
