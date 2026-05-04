@@ -18,6 +18,7 @@
 # include <limits.h>
 # include <stdio.h>
 
+
 typedef struct s_stack
 {
 	int				value;
@@ -40,10 +41,21 @@ typedef struct s_count
 	int	total;
 }	t_count;
 
+typedef struct s_global
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	t_count	count;
+	int		bench;
+	int		algo;
+}	t_global;
+
 int		ft_isdigit(int c);
-int		valid_arguments(t_stack **stack_a, char **argv);
+int		parse_arguments(int i, char **argv, t_global *global);
 int		ft_atoi(const char *nptr);
 int		stack_size(t_stack *stack);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		parse_flags(t_global *global, char **argv);
 char	**ft_split(char const *s, char c);
 t_stack	*ft_lstnew(int value);
 t_stack	*ft_lstlast(t_stack *lst);
@@ -58,5 +70,6 @@ void	swap(t_stack *stack, t_count *count, char c);
 void	swap_a_b(t_stack *stack_a, t_stack *stack_b, t_count *count);
 void	complex_sort(t_stack **stack_a,t_stack **stack_b, t_count *count);
 void	simple_sort(t_stack **stack_a, t_stack **stack_b, t_count *count);
+void	*ft_memset(void *b, int c, size_t len)
 
 #endif
