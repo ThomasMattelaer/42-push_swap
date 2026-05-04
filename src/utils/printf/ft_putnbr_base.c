@@ -14,8 +14,8 @@
 
 static void	ft_putnbr_custom(unsigned long nbl, char *base, int *res, int fd)
 {
-	char	c;
-	int		base_len;
+	char			c;
+	unsigned long	base_len;
 
 	base_len = 16;
 	if (nbl >= base_len)

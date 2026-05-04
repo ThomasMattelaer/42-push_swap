@@ -14,5 +14,5 @@
 
 void	complex_sort(t_stack **stack_a, t_stack **stack_b, t_count *count)
 {
-	ft_printf(1, "complex\n");
+	ft_printf(1, "complex\n", stack_a, stack_b, count);
 }

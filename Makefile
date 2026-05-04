@@ -22,7 +22,6 @@ SRCS		:=	src/main.c \
 				src/utils/ft_lstadd_back.c \
 				src/utils/ft_lstlast.c \
 				src/utils/ft_lstnew.c \
-				src/utils/ft_putstr.c \
 				src/utils/ft_split.c \
 				src/utils/stack_size.c \
 				src/utils/ft_strncmp.c \

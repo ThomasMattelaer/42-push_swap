@@ -58,5 +58,5 @@ float	compute_disorder(t_stack *stack_a)
 		}
 		i++;
 	}
-	return ((float)mistakes / total_pairs);
+	return ((float)(mistakes / total_pairs));
 }

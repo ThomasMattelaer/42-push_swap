@@ -14,7 +14,7 @@
 
 static void	write_and_calculate(t_count *count)
 {
-	ft_printf(1, "rrr");
+	ft_printf(1, "rrr\n");
 	count->rrr++;
 	count->total++;
 }
