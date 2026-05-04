@@ -9,10 +9,7 @@
 /*   Updated: 2026-04-28 09:51:09 by tmattela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
-
-
 
 static int	parsing_data(char *argv)
 {
@@ -93,7 +90,7 @@ int	parse_arguments(int i, char **argv, t_global *global)
 		}
 		i++;
 	}
-	return (1)
+	return (1);
 }
 
 
