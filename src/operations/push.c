@@ -16,17 +16,18 @@ static void	write_and_calculate(t_count *count, char c)
 {
 	if (c == 'a')
 	{
-		ft_printf(1,"pa");
+		ft_printf(1, "pa");
 		count->pa++;
-    	count->total++;
+		count->total++;
 	}
 	else if (c == 'b')
 	{
 		ft_printf(1, "pb");
 		count->pb++;
-    	count->total++;
+		count->total++;
 	}
 }
+
 void	push(t_stack **stack_b, t_stack **stack_a, t_count *count, char c)
 {
 	t_stack	*save_a;

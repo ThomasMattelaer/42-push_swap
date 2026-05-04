@@ -32,7 +32,6 @@ static int	is_sorted(t_stack *stack_a)
 	return (1);
 }
 
-
 static void	print_stack(t_stack *stack, char *name)
 {
 	t_stack	*current;
@@ -55,22 +54,44 @@ static void	print_stack(t_stack *stack, char *name)
 	printf("----------------\n");
 }
 
-
+static void	launch_algo(t_global *global, float disorder)
+{
+	if (global->algo == 1)
+		simple_sort(&global->stack_a, global->stack_b, &global->count);
+	else if (global->algo == 2)
+		medium_sort(&global->stack_a, global->stack_b, &global->count);
+	else if (global->algo == 3)
+		complex_sort(&global->stack_a, global->stack_b, &global->count);
+	else if (global->algo == 4)
+	{
+		if (disorder < 0.2)
+			simple_sort(&global->stack_a, global->stack_b, &global->count);
+		else if (disorder >= 0.2 && disorder < 0.5)
+			medium_sort(&global->stack_a, global->stack_b, &global->count);
+		else if (disorder >= 0.5)
+			complex_sort(&global->stack_a, global->stack_b, &global->count);
+	}
+}
 
 int	main(int argc, char **argv)
 {
 	t_global	global;
 	int			i;
+	float		disorder;
 
 	ft_memset(&global, 0, sizeof(t_global));
 	if (argc == 1)
 		return (0);
 	i = parse_flags(&global, argv);
-	if (parse_arguments(i, argv, &global) == 0 || is_sorted(global.stack_a) == 1)
+	if (parse_arguments(i, argv, &global) == 0
+		|| is_sorted(global.stack_a) == 1)
 		return (0);
-	//check si l'algo est adaptative sinon lancer le bon algo;
-	//check si bench est = 1 si oui lancer la fonction de print du benchmark;
+	if (global.algo == 4 || global.bench == 1)
+		disorder = compute_disorder(global.stack_a);
+	launch_algo(&global, disorder);
+	if (global.bench == 1)
+		print_bench(&global.count, disorder, global.algo);
 	print_stack(global.stack_a, "A");
 	print_stack(global.stack_b, "B");
-	printf("Disorder : %.2f\n", compute_disorder(global.stack_a));
+	printf("Disorder : %.2f\n", disorder);
 }

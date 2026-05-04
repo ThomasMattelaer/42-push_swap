@@ -18,15 +18,16 @@ static void	write_and_calculate(t_count *count, char c)
 	{
 		ft_printf(1, "rra");
 		count->rra++;
-    	count->total++;
+		count->total++;
 	}
 	else if (c == 'b')
 	{
 		ft_printf(1, "rrb");
 		count->rrb++;
-    	count->total++;
+		count->total++;
 	}
 }
+
 void	reverse_rotate(t_stack **stack, t_count *count, char c)
 {
 	t_stack	*top;

@@ -18,13 +18,13 @@ static void	write_and_calculate(t_count *count, char c)
 	{
 		ft_printf(1, "sa");
 		count->sa++;
-    	count->total++;
+		count->total++;
 	}
 	else if (c == 'b')
 	{
 		ft_printf(1, "sb");
 		count->sb++;
-    	count->total++;
+		count->total++;
 	}
 }
 

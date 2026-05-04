@@ -18,7 +18,6 @@
 # include <limits.h>
 # include <stdio.h>
 
-
 typedef struct s_stack
 {
 	int				value;
@@ -62,14 +61,16 @@ t_stack	*ft_lstlast(t_stack *lst);
 float	compute_disorder(t_stack *stack_a);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 void	reverse_rotate(t_stack **stack, t_count *count, char c);
-void	reverse_rotate_a_b(t_stack **stack_a, t_stack **stack_b, t_count *count);
+void	reverse_rotate_a_b(t_stack **stack_a, t_stack **stack_b,
+			t_count *count);
 void	rotate(t_stack **stack, t_count *count, char c);
 void	rotate_a_b(t_stack **stack_a, t_stack **stack_b, t_count *count);
 void	push(t_stack **stack_a, t_stack **stack_b, t_count *count, char c);
 void	swap(t_stack *stack, t_count *count, char c);
 void	swap_a_b(t_stack *stack_a, t_stack *stack_b, t_count *count);
-void	complex_sort(t_stack **stack_a,t_stack **stack_b, t_count *count);
+void	complex_sort(t_stack **stack_a, t_stack **stack_b, t_count *count);
 void	simple_sort(t_stack **stack_a, t_stack **stack_b, t_count *count);
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len);
+void	print_bench(t_count *count, float disorder, int strat);
 
 #endif

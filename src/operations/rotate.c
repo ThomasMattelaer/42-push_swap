@@ -12,22 +12,22 @@
 
 #include "push_swap.h"
 
-
 static void	write_and_calculate(t_count *count, char c)
 {
 	if (c == 'a')
 	{
 		ft_printf(1, "ra");
 		count->ra++;
-    	count->total++;
+		count->total++;
 	}
 	else if (c == 'b')
 	{
 		ft_printf(1, "rb");
 		count->rb++;
-    	count->total++;
+		count->total++;
 	}
 }
+
 void	rotate(t_stack **stack, t_count *count, char c)
 {
 	int		temp_content;

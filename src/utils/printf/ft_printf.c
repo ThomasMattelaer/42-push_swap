@@ -20,7 +20,8 @@ static int	handle_case_letter(char c, va_list args, int *res, int fd)
 	else if (c == 'c')
 		ft_putchar((char) va_arg(args, int), res, fd);
 	else if (c == 'u')
-		ft_putnbr_unsigned((unsigned long) va_arg(args, unsigned long), res, fd);
+		ft_putnbr_unsigned((unsigned long) va_arg(args, unsigned long),
+			res, fd);
 	else if (c == 'x' || c == 'X')
 		ft_putnbr_base((unsigned long)va_arg(args, unsigned int), c, res, fd);
 	else if (c == 'p')
